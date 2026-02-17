@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="hayden_face_icon/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="hayden_face_icon/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="hayden_face_icon/apple-touch-icon-72x72.png" />
@@ -24,46 +25,359 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Freitas</title>
+    <title>Samuel Freitas | Multidisciplinary Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            text-align: center;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+
         .container {
-            max-width: 600px;
-            margin: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        .links {
-            margin-top: 20px;
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            z-index: -1;
         }
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 15px;
-            text-decoration: none;
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
             color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
         }
-        a:hover {
-            background-color: #0056b3;
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .link-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .link-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .link-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .link-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 0.5rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .links-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .link-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .intro {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animation for elements */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Samuel Freitas</h1>
-        <p>Hi, my name is Sam Freitas, and I am a Multidisciplinary Engineer with a passion for innovative research, knowledge, and exploring the unknown.</p>
-        <div class="links">
-            <a href="pdfs/Resume.pdf" target="_blank">📄 View Resume</a>
-            <a href="pdfs/CV.pdf" target="_blank">💼 View CV</a>
+        <header>
+            <div class="profile-img floating">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Samuel Freitas</h1>
+            <p class="tagline">Multidisciplinary Engineer | Researcher | Innovator</p>
+            <p class="intro">Hi, my name is Sam Freitas, and I am a Multidisciplinary Engineer with a passion for innovative research, knowledge, and exploring the unknown.</p>
+        </header>
+
+        <div class="links-container">
+            <div class="link-card">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Resume</h3>
+                <p>View my professional experience and qualifications</p>
+                <a href="pdfs/Resume.pdf" target="_blank" class="btn">View Resume</a>
+            </div>
+
+            <div class="link-card">
+                <i class="fas fa-address-card"></i>
+                <h3>CV</h3>
+                <p>Comprehensive academic and professional profile</p>
+                <a href="pdfs/CV.pdf" target="_blank" class="btn">View CV</a>
+            </div>
+
+            <div class="link-card">
+                <i class="fas fa-book"></i>
+                <h3>Publications</h3>
+                <p>Research papers and academic contributions</p>
+                <a href="https://scholar.google.com/citations?user=_vYUUR4AAAAJ&hl=en" target="_blank" class="btn">View Publications</a>
+            </div>
+
+            <div class="link-card">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Code repositories and open-source projects</p>
+                <a href="https://github.com/Sam-Freitas" target="_blank" class="btn">View GitHub</a>
+            </div>
         </div>
-        <div class="Second_links">
-            <a href="https://scholar.google.com/citations?user=_vYUUR4AAAAJ&hl=en" target="_blank">📚🔬 View Publications</a>
-            <a href="https://github.com/Sam-Freitas" target="_blank">🐙💻 View GitHub</a>
+
+        <div class="social-links">
+            <a href="mailto:samfreitas@arizona.edu" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
+
+        <footer>
+            <p>© 2026 Samuel Freitas | Multidisciplinary Engineer</p>
+        </footer>
     </div>
 </body>
 </html>
